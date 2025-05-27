@@ -21,34 +21,18 @@ import java.time.LocalDateTime;
 public class User {
     @Id
     String username;
-
-    @Column(nullable = false)
     String password;
-
     String email;
-
-    @Column(nullable = false)
     String fullName;
-
     LocalDate dob;
-
     @Enumerated(EnumType.STRING)
     Gender gender;
-
     String phoneNumber;
     String job;
-
-    @Column(nullable = false)
     LocalDateTime createdAt;
-
-    @Column(nullable = false)
     LocalDateTime updatedAt;
-
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     Role role;
-
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     UserStatus status;
 

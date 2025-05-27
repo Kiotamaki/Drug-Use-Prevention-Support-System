@@ -2,13 +2,14 @@ package com.swp.drug_use_prevention_support_system.domain.dtos.requests;
 
 import com.swp.drug_use_prevention_support_system.domain.enums.Role;
 import com.swp.drug_use_prevention_support_system.domain.enums.UserStatus;
+import com.swp.drug_use_prevention_support_system.validators.PasswordMatches;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+@PasswordMatches
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,9 +26,9 @@ public class CreateUserRequest {
     @Size(min = 8, max = 255, message = "Password must be at least 8 characters")
     String password;
 
-    @NotBlank(message = "Full name is required")
-    @Size(max = 255, message = "Full name must be less than 256 characters")
-    String fullName;
+    @NotBlank(message = "Confirm password is required")
+    @Size(min = 8, max = 255, message = "Password must be at least 8 characters")
+    String confirm;
 
     Role role;
 

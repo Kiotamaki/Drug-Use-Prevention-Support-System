@@ -14,15 +14,10 @@ import java.time.LocalDate;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UpdateUserRequest {
 
-    @NotBlank(message = "Password is required")
-    @Size(min = 8, max = 255, message = "Password must be at least 8 characters")
-    String password;
-
     @Email(message = "Invalid email format")
     @Size(max = 255, message = "Email must be less than 256 characters")
     String email;
 
-    @NotBlank(message = "Full name is required")
     @Size(max = 255, message = "Full name must be less than 256 characters")
     String fullName;
 
